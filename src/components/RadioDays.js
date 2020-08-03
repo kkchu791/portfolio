@@ -1,9 +1,9 @@
 import React from 'react';
-import radioDaysImage from '../assets/images/radioDaysImage.png'
-import {Image } from './Image';
-import styles from './Projects.module.scss'
+import radioDaysImage from '../assets/images/radioDaysImage.png';
+import {Image} from './Image';
+import styles from './RadioDays.module.scss'
 
-export const Projects = () => {
+export const RadioDays = () => {
   return (
     <div className={styles.container}>
       <Image image={radioDaysImage} width='250px' height='400px' />
@@ -18,4 +18,5 @@ export const Projects = () => {
   );
 }
 
-export default Projects;
+export default RadioDays;
+

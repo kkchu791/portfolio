@@ -2,15 +2,19 @@ import React, {useState} from 'react';
 import { Navbar } from './Navbar';
 import { Home } from './Home';
 import { Player } from './Player';
-import { Projects } from './Projects';
+import { RadioDays } from './RadioDays';
+import { Haikus } from './Haikus';
+import { NextPageButton } from './NextPageButton';
+import { PrevPageButton } from './PrevPageButton';
 import styles from './Layout.module.scss'
 
 export const Layout = () => {
-  const [currentTab, setCurrentTab] = useState('Home');
+  const [currentTab, setCurrentTab] = useState(0);
 
   const tabs = {
-    'Home': <Home />,
-    'Projects': <Projects />,
+    0: <Home />,
+    1: <RadioDays />,
+    2: <Haikus />,
   }
 
   return (
@@ -19,7 +23,15 @@ export const Layout = () => {
         tabs={tabs}
         setCurrentTab={setCurrentTab}
       />
+      <PrevPageButton
+        setCurrentTab={setCurrentTab}
+        currentTab={currentTab}
+      />
       {tabs[currentTab]}
+      <NextPageButton
+        setCurrentTab={setCurrentTab}
+        currentTab={currentTab}
+      />
       <Player
         currentTab={currentTab}
       />
